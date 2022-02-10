@@ -1,69 +1,52 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import PT from 'prop-types';
-
-// import './NavBar.scss';
+import { AuthContext } from 'src/components/context/AuthContext';
 
 const links = [
     {
         id: 1,
         url: '/',
         title: 'Home',
-        exact: true
+        exact: 'true'
     },
     {
         id: 2,
-        url: '/favourite-movies',
-        title: 'Favourite Movies'
-    },
-    {
-        id: 3,
-        title: 'Logout'
-    },
-    {
-        id: 4,
-        url: '/profile',
-        title: 'Profile'
+        url: '/news',
+        title: 'All News'
     }
 ];
 
-const NavBar = ({logoutUser}) => (
-    <nav className="navbar">
-        <ul className="navbar__list">
-            {links.map(({ id, url, title, exact }) => {
-                if (!url) {
+const NavBar = () => {
+    const { setUser } = React.useContext(AuthContext);
+    return (
+        <nav className="navbar">
+            <ul className="navbar__list">
+                {links.map(({ id, url, title, exact }) => {
                     return (
                         <li key={id} className="navbar__list-item">
-                            <span
+                            <NavLink
+                                to={url}
+                                exact={exact}
                                 className="navbar__link"
-                                onClick={logoutUser}
                             >
                                 {title}
-                            </span>
+                            </NavLink>
                         </li>
                     );
-                }
-
-                return (
-                    <li key={id} className="navbar__list-item">
-                        <NavLink
-                            to={url}
-                            exact={exact}
-                            className="navbar__link"
-                            activeClassName="navbar__link--active"
-                        >
-                            {title}
-                        </NavLink>
-                    </li>
-                );
-            })}
-        </ul>
+                })}
+                <li key="logut" className="navbar__list-item">
+                    <NavLink
+                        to="/auth"
+                        exact={true}
+                        className="navbar__link"
+                        onClick={() => setUser(null)}
+                    >
+                        Logout
+                    </NavLink>
+                </li>
+            </ul>
         
-    </nav>
-);
-
-NavBar.propTypes = {
-    logoutUser: PT.func.isRequired
-};
+        </nav>
+    );};
 
 export default NavBar;

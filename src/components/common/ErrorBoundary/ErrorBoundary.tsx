@@ -1,13 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Footer from '../Footer/Footer';
 import {StBody, StContent, StIcon, StLink, StMain, StText, StTitle, StTop} from "./styled";
 
-class ErrorBoundary extends Component {
-    state = {
-        error: null
-    }
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface IProps {
+}
 
-    static getDerivedStateFromError(error:any) {
+type IState =  {
+    error: null ;
+};
+
+type PartialPoint = IState | null;
+class ErrorBoundary extends React.Component<IProps, PartialPoint> {
+    state: IState = {
+        error: null
+    };
+
+    static getDerivedStateFromError(error: any) {
         return { error };
     }
 

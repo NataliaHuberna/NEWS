@@ -93,4 +93,8 @@
     color: $red-text;
     font-size: 1.4rem;
   }
+
+  &__validation_error {
+    border-color: red;
+  }
 }

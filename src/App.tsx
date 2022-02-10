@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import {  useRoutes } from "react-router-dom";
+import routes from './components/routes/routes';
+import Layout from "./components/common/Layout/Layout";
+// import ErrorBoundary from "./components/common/ErrorBoundary/ErrorBoundary";
+import { AuthContext } from "./components/context/AuthContext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { user } = React.useContext(AuthContext);
+    const isLogged = !!user;
+    const routing = useRoutes(routes(isLogged));
+    return (
+        // <ErrorBoundary>
+        <Layout>
+            {routing}
+        </Layout>
+        // </ErrorBoundary>
+    );
 }
 
 export default App;
