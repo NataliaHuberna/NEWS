@@ -1,0 +1,37 @@
+@import "../../styles/placeholders.scss";
+@import "../../styles/variables.scss";
+
+.toolbar {
+  background-color: rgba($color: $white-bg, $alpha: 0.9);
+  padding: $gutter;
+  box-shadow: 0 0.8rem 1.5rem rgba($color: $darkblack-bg, $alpha: 0.3);
+
+  &--sticky {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  &__wrapper {
+    @extend %section-wrapper;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.8rem;
+  }
+
+  &__tools {
+    display: flex;
+  }
+
+  &__input {
+    margin-right: 2.5rem;
+  }
+}
