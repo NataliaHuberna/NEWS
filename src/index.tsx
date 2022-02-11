@@ -5,12 +5,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './components/context/AuthContext';
+import NewsProvider from "src/components/context/NewsContext";
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <AuthProvider>
-                <App />
+                <NewsProvider>
+                    <App />
+                </NewsProvider>
             </AuthProvider>
         </BrowserRouter>
     </React.StrictMode>,

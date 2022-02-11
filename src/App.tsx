@@ -1,21 +1,25 @@
 import React from "react";
 import "./App.css";
-import {  useRoutes } from "react-router-dom";
-import routes from './components/routes/routes';
+import {Routes, Route} from "react-router";
 import Layout from "./components/common/Layout/Layout";
-// import ErrorBoundary from "./components/common/ErrorBoundary/ErrorBoundary";
-import { AuthContext } from "./components/context/AuthContext";
+import AboutUs from "src/components/pages/AboutUs/index";
+import AllNews from "src/components/pages/AllNews/index";
+import Auth from "src/components/pages/Auth/Auth";
+import FullNew from "src/components/pages/FullNew/index";
+import ErrorBoundary from "./components/common/ErrorBoundary/ErrorBoundary";
 
 function App() {
-    const { user } = React.useContext(AuthContext);
-    const isLogged = !!user;
-    const routing = useRoutes(routes(isLogged));
     return (
-        // <ErrorBoundary>
-        <Layout>
-            {routing}
-        </Layout>
-        // </ErrorBoundary>
+        <ErrorBoundary>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route path="/" element={<AboutUs />} />
+                    <Route path="/news" element={<AllNews />}/>
+                    <Route path="/news/:newId" element={<FullNew />}/>
+                    <Route path="/auth" element={<Auth />}/>
+                </Route>
+            </Routes>
+        </ErrorBoundary>
     );
 }
 

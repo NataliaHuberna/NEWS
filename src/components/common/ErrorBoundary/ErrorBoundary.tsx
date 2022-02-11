@@ -2,17 +2,17 @@ import React from 'react';
 import Footer from '../Footer/Footer';
 import {StBody, StContent, StIcon, StLink, StMain, StText, StTitle, StTop} from "./styled";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface IProps {
-}
+type TProps = {
+    children: React.ReactNode
+};
 
-type IState =  {
+type TState =  {
     error: null ;
 };
 
-type PartialPoint = IState | null;
-class ErrorBoundary extends React.Component<IProps, PartialPoint> {
-    state: IState = {
+type PartialPoint = TState | null;
+class ErrorBoundary extends React.Component<TProps, PartialPoint> {
+    state: TState = {
         error: null
     };
 
@@ -21,8 +21,8 @@ class ErrorBoundary extends React.Component<IProps, PartialPoint> {
     }
 
     render() {
-        const { error } = this.state;
         const { children } = this.props;
+        const { error } = this.state;
 
         if (!error) return children;
 
@@ -34,7 +34,7 @@ class ErrorBoundary extends React.Component<IProps, PartialPoint> {
                     <StBody>
                         <StTop>
                             <StTitle>{name}</StTitle>
-                            <StIcon className="fas fa-bug"></StIcon>
+                            <StIcon className="fas fa-bug"/>
                         </StTop>
 
                         <StText>{message}</StText>

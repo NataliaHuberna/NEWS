@@ -1,18 +1,19 @@
 import React from 'react';
 import { AuthContext } from 'src/components/context/AuthContext';
 import NavBar from '../NavBar/NavBar';
+import {StDiv, StH1} from "src/components/common/Toolbar/styled";
 
 const Toolbar = ({}: any) => {
     const { user } = React.useContext(AuthContext);
     const isLogged = !!user;
     return (
-        <div>
+        <StDiv>
             {
                 isLogged
                     ? <NavBar />
-                    : <h1 className="toolbar__title">Welcome to our application!</h1>
+                    : <StH1 className="toolbar__title">Hello! Let's read the latest news!</StH1>
             }
-        </div>
+        </StDiv>
     );
 };
 

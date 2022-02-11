@@ -1,17 +1,14 @@
 import React from 'react';
+import {Outlet} from "react-router";
 import Footer from '../Footer/Footer';
 import Toolbar from '../Toolbar/Toolbar';
 import {StContent, StLayout} from "./styled";
 
-type TProps = {
-    children: React.ReactNode
-};
-
-const Layout: React.FC<TProps> = ({ children }) => (
+const Layout: React.FC = () => (
     <StLayout>
         <Toolbar className="toolbar--sticky"/>
         <StContent>
-            {children}
+            <Outlet/>
         </StContent>
         <Footer/>
     </StLayout>

@@ -7,6 +7,9 @@ export const StLayout = styled.div`
     position: relative;
   }
   &>div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 80px;
     box-shadow: 1px 1px 7px 0 ${COLORS.shadowBox};
     z-index: 1;
