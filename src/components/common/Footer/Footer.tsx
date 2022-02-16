@@ -1,7 +1,7 @@
 import React from 'react';
 import {StFooter, StFooterCopyright, StFooterWrapper} from "./styled";
 
-const Footer = () => (
+const Footer: React.FC = () => (
     <StFooter>
         <StFooterWrapper>
             <StFooterCopyright>

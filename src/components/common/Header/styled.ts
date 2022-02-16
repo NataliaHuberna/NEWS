@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {COLORS} from '../styles/colors';
 
 export const StH1 = styled.h1`
-  background-color: ${COLORS.whiteBg};
+  background-color: ${COLORS.WHITE_BG};
   color: ${COLORS.darkblackBg};
   text-align: center;
   text-shadow: 6px 0px 8px #4a00e0;

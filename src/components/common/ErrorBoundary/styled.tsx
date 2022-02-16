@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {COLORS} from '../styles/colors';
 
 export const StMain = styled.div`
-  background-image: ${COLORS.purpleBg};
+  background-image: ${COLORS.PURPLE_BG};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,9 +19,9 @@ export const StContent = styled.div`
 export const StBody = styled.div`
   padding: 2.5rem;
   border-radius: 1.5rem;
-  background-color: ${COLORS.whiteBg};
+  background-color: ${COLORS.WHITE_BG};
   max-width: 35rem;
-  box-shadow: 0 0.8rem 1.5rem ${COLORS.shadowBox};
+  box-shadow: 0 0.8rem 1.5rem ${COLORS.SHADOW_BOX};
   text-align: center;
 `;
 
@@ -49,6 +49,6 @@ export const StText = styled.p`
 `;
 
 export const StLink = styled.a`
-  color: ${COLORS.orangeText};
+  color: ${COLORS.ORANGE_TEXT};
 `;
 

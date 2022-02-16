@@ -2,9 +2,9 @@ import styled from "styled-components";
 import {COLORS} from '../styles/colors';
 
 export const StFooter = styled.div`
-  background-color: ${COLORS.whiteBg};
+  background-color: ${COLORS.WHITE_BG};
   padding: 1.5rem 2.5rem;
-  box-shadow: 1px 1px 7px 0 ${COLORS.shadowBox};
+  box-shadow: 1px 1px 7px 0 ${COLORS.SHADOW_BOX};
 `;
 
 export const StFooterWrapper = styled.div`
@@ -15,5 +15,5 @@ export const StFooterWrapper = styled.div`
 `;
 
 export const StFooterCopyright = styled.strong`
-  color: ${COLORS.greyText};
+  color: ${COLORS.GREY_TEXT};
 `;

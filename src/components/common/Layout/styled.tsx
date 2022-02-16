@@ -11,7 +11,7 @@ export const StLayout = styled.div`
     justify-content: center;
     align-items: center;
     height: 80px;
-    box-shadow: 1px 1px 7px 0 ${COLORS.shadowBox};
+    box-shadow: 1px 1px 7px 0 ${COLORS.SHADOW_BOX};
     z-index: 1;
   }
   &>div:nth-child(2){
@@ -24,7 +24,5 @@ export const StLayout = styled.div`
 `;
 
 export const StContent = styled.div`
-  background-image: ${COLORS.purpleBg};
+  background-image: ${COLORS.PURPLE_BG};
 `;
-
-

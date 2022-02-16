@@ -3,12 +3,12 @@ import {COLORS} from '../../common/styles/colors';
 
 export const StForm = styled.form`
   display: flex;
-  background-color: ${COLORS.whiteBg};
+  background-color: ${COLORS.WHITE_BG};
   padding: 1.5rem 2.5rem;
   flex-direction: column;
   width: 400px;
   border-radius: 20px;
-  box-shadow: 0 0.8rem 1.5rem ${COLORS.shadowBox};
+  box-shadow: 0 0.8rem 1.5rem ${COLORS.SHADOW_BOX};
   height: 300px;
   display: flex;
   flex-direction: column;

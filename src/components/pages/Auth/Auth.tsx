@@ -31,9 +31,11 @@ const Auth = () => {
     };
 
     const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        // const regexp = /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g;
         setPassword({
             password: e.target.value,
-            error: e.target.value.length < 10,
+            // error: !e.target.value.match(regexp),
+            error: false
         });
     };
 

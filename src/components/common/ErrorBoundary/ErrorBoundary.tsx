@@ -11,12 +11,16 @@ type TState =  {
 };
 
 type PartialPoint = TState | null;
+
+type TError = {
+    stack?: string;
+};
 class ErrorBoundary extends React.Component<TProps, PartialPoint> {
     state: TState = {
         error: null
     };
 
-    static getDerivedStateFromError(error: any) {
+    static getDerivedStateFromError(error: TError) {
         return { error };
     }
 
@@ -36,9 +40,8 @@ class ErrorBoundary extends React.Component<TProps, PartialPoint> {
                             <StTitle>{name}</StTitle>
                             <StIcon className="fas fa-bug"/>
                         </StTop>
-
                         <StText>{message}</StText>
-                        <StLink href="/">Return to previous page</StLink>
+                        <StLink href="/aboutUs">Return to main page</StLink>
                     </StBody>
                 </StContent>
 

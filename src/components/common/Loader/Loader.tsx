@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyledSecondDiv, StyledThirdDiv} from './styled';
 
-const Loader = () => (
+const Loader: React.FC = () => (
     <StyledSecondDiv>
         {new Array(4).fill(null).map((_, index) => <StyledThirdDiv key={index}/>)}
     </StyledSecondDiv>

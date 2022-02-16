@@ -6,7 +6,7 @@ const AboutUs = () => {
     const {user} = React.useContext(AuthContext);
     return (
         <StWrapper>
-            <StTitle>Hello, dear {user}!</StTitle>
+            <StTitle>Hello, dear <strong>{user}</strong>!</StTitle>
             <StP>To get started you'll need an API key. They're free while you are in development.
                 Get API key.
                 You should know how to make web requests in your chosen programming language. We have included some

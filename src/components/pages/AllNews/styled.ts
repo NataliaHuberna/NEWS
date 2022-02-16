@@ -13,7 +13,7 @@ export const StWrapper = styled.div`
   .MuiPaper-root{
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0.8rem 1.5rem ${COLORS.shadowBox};
+    box-shadow: 0 0.8rem 1.5rem ${COLORS.SHADOW_BOX};
     .MuiCardActions-root{
       margin-top: auto;
     }

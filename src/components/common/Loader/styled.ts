@@ -1,4 +1,5 @@
 import styled, {keyframes} from 'styled-components';
+import {COLORS} from "src/components/common/styles/colors";
 
 const ldsEllipsis1 = keyframes`
   0% {
@@ -30,7 +31,7 @@ const ldsEllipsis2 = keyframes`
 export const StyledMainDiv = styled.div`
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);;
+  background: ${COLORS.BACKGROUND_LOADER};
   position: absolute;
   top:0;
   left:0;
