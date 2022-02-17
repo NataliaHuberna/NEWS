@@ -7,7 +7,6 @@ const Footer: React.FC = () => (
             <StFooterCopyright>
                 All Rights Reserved, {new Date().getFullYear()}
             </StFooterCopyright>
-
         </StFooterWrapper>
     </StFooter>
 );

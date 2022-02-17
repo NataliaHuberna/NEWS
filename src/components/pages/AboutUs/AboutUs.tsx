@@ -2,7 +2,7 @@ import React from 'react';
 import {StP, StTitle, StWrapper} from "src/components/pages/AboutUs/styled";
 import {AuthContext} from "src/components/context/AuthContext";
 
-const AboutUs = () => {
+const AboutUs: React.FC = () => {
     const {user} = React.useContext(AuthContext);
     return (
         <StWrapper>

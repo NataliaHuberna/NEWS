@@ -6,10 +6,8 @@ export const StPageWrapper = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 1200px;
-  //color: ${COLORS.GREY_TEXT};
-  color: white;
+  color: ${COLORS.WHITE_BG};
   font-size: 20px;
-  //background-color: red;
   margin: 50px auto;
   min-height: calc(100vh - 260px);
   justify-content: space-between;
@@ -26,7 +24,6 @@ export const StHeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  //margin: 50px auto;
 `;
 
 export const StPictureWrapper = styled.div`

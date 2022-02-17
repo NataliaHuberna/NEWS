@@ -9,9 +9,8 @@ import {
     StTitleWrapper
 } from "src/components/pages/FullNew/styled";
 
-const FullNew = () => {
+const FullNew: React.FC = () => {
     const { singleNew } = React.useContext(NewsContext);
-
     return (
         <StPageWrapper>
             <StMainWrapper>
@@ -38,8 +37,6 @@ const FullNew = () => {
                         odio quasi, quia, reiciendis tempora. Aliquid amet animi architecto aspernatur corporis
                         cupiditate deserunt dicta doloribus earum eius enim et expedita, facere fugiat laboriosam
                         neque nostrum obcaecati odit quae qui quibusdam quisquam saepe soluta ullam, vel velit
-                        voluptatem voluptates? Consequuntur delectus facere, incidunt ipsa iusto mollitia quasi qui
-                        sequi suscipit. A aliquam asperiores, autem deserunt ea eum facere fuga in inventore, minima,
                         modi perferendis quae repellat sapiente sequi tempora voluptatibus? Ab amet ea enim eos eum id,
                         in incidunt magnam nesciunt officiis qui, quidem, repudiandae sit! Beatae dolor eligendi et
                         Aliquid commodi consequatur cumque dolor ex fugit iste libero nostrumtotam? </StContent>

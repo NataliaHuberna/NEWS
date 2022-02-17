@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorBoundary> window should match the snapshot 1`] = `
+<div
+  className="sc-hKwDye eZOoiD"
+>
+  <div
+    className="sc-eCImPb jMSvpK"
+  >
+    <div
+      className="sc-jRQBWg bACNkJ"
+    >
+      <div
+        className="sc-gKclnd fZvJuZ"
+      >
+        <h1
+          className="sc-iCfMLu dLDEDg"
+        >
+          Error
+        </h1>
+        <i
+          className="sc-furwcr eVOYR fas fa-bug"
+        />
+      </div>
+      <p
+        className="sc-pVTFL fPCuWM"
+      >
+        
+      </p>
+      <a
+        className="sc-jrQzAO fsxzBU"
+        href="/aboutUs"
+      >
+        Return to main page
+      </a>
+    </div>
+  </div>
+  <div
+    className="sc-bdvvtL cjbcZU"
+  >
+    <div
+      className="sc-gsDKAQ gpLSln"
+    >
+      <strong
+        className="sc-dkPtRN eHRfMh"
+      >
+        All Rights Reserved, 
+        2022
+      </strong>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ErrorBoundary window should match the snapshot 1`] = `
+<div
+  className="sc-hKwDye eZOoiD"
+>
+  <div
+    className="sc-eCImPb jMSvpK"
+  >
+    <div
+      className="sc-jRQBWg bACNkJ"
+    >
+      <div
+        className="sc-gKclnd fZvJuZ"
+      >
+        <h1
+          className="sc-iCfMLu dLDEDg"
+        >
+          Error
+        </h1>
+        <i
+          className="sc-furwcr eVOYR fas fa-bug"
+        />
+      </div>
+      <p
+        className="sc-pVTFL fPCuWM"
+      >
+        
+      </p>
+      <a
+        className="sc-jrQzAO fsxzBU"
+        href="/aboutUs"
+      >
+        Return to main page
+      </a>
+    </div>
+  </div>
+  <div
+    className="sc-bdvvtL cjbcZU"
+  >
+    <div
+      className="sc-gsDKAQ gpLSln"
+    >
+      <strong
+        className="sc-dkPtRN eHRfMh"
+      >
+        All Rights Reserved, 
+        2022
+      </strong>
+    </div>
+  </div>
+</div>
+`;

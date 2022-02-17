@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import {StForm, StFormWrap} from "src/components/pages/Auth/styled";
 
-const Auth = () => {
+const Auth: React.FC = () => {
     const navigate = useNavigate();
     const [ login, setLogin] = React.useState({
         login: '',

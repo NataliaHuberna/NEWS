@@ -8,25 +8,10 @@ import CardActions from "@mui/material/CardActions";
 import {Link} from "react-router-dom";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
-
-type TSource = {
-    id: string | null,
-    name: string
-};
-
-type TArticle = {
-    source: TSource,
-    author: string,
-    title: string,
-    description: string,
-    url: string,
-    urlToImage: string,
-    publishedAt: string,
-    content: string | null
-};
+import {TNew} from "src/types/newsTypes";
 
 type TProps = {
-    singleNew: TArticle
+    singleNew: TNew
 };
 
 const NewCard: React.FC<TProps> = ({singleNew}) => {

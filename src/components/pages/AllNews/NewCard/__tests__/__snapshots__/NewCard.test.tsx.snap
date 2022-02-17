@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewCard test should render correctly 1`] = `ReactWrapper {}`;
+
+exports[`NewCard test should setSingleNew p 1`] = `ReactWrapper {}`;
+
+exports[`NewCard test should setSingleNew(publishedAt) 1`] = `ReactWrapper {}`;

@@ -15,6 +15,7 @@ type PartialPoint = TState | null;
 type TError = {
     stack?: string;
 };
+
 class ErrorBoundary extends React.Component<TProps, PartialPoint> {
     state: TState = {
         error: null
