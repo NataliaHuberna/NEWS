@@ -1,22 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AuthProvider from './components/context/AuthContext';
-import NewsProvider from "src/components/context/NewsContext";
-import {GlobalStyles} from "src/GlobalStyles";
+import {GlobalStyle} from "./globalStyles";
+import { Provider } from 'react-redux';
+import App from './indexApp';
+import {store} from './store';
 
 ReactDOM.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <AuthProvider>
-                <NewsProvider>
-                    <GlobalStyles/>
-                    <App />
-                </NewsProvider>
-            </AuthProvider>
-        </BrowserRouter>
+        <Provider store={store}>
+            <GlobalStyle />
+            <App />
+        </Provider>
     </React.StrictMode>,
     document.getElementById('root')
 );

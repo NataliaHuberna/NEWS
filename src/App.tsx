@@ -1,23 +1,19 @@
-import React from "react";
-import {Routes, Route} from "react-router";
-import Layout from "./components/common/Layout/Layout";
-import AboutUs from "src/components/pages/AboutUs/index";
-import AllNews from "src/components/pages/AllNews/index";
-import Auth from "src/components/pages/Auth/Auth";
-import FullNew from "src/components/pages/FullNew/index";
-import ErrorBoundary from "./components/common/ErrorBoundary/ErrorBoundary";
+import React from 'react';
+import {StButton, StDiv, StDivHeader, StH1} from "./styled";
+import TaskInput from './components/TaskInput';
+import List from './components/List';
+import Notification from "./components/Notification";
 
-const App: React.FC = () => (
-    <ErrorBoundary>
-        <Routes>
-            <Route element={<Layout />}>
-                <Route path="/" element={<AboutUs />} />
-                <Route path="/news" element={<AllNews />}/>
-                <Route path="/news/:newId" element={<FullNew />}/>
-                <Route path="/auth" element={<Auth />}/>
-            </Route>
-        </Routes>
-    </ErrorBoundary>
-);
+const App = ({dark, changeTheme}) => {
+    return <StDiv dark={dark}>
+        <StDivHeader><StH1>ToDoList</StH1></StDivHeader>
+        <TaskInput />
+        <h2>Tasks for day</h2>
+        <List />
+        <Notification/>
+        <StButton dark={dark} onClick={changeTheme}>Change theme</StButton>
+    </StDiv>;
+};
 
 export default App;
+
