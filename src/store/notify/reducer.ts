@@ -1,16 +1,17 @@
+import {ActionType} from "typesafe-actions";
+import { Reducer } from 'redux';
 import {CLEAR_NOTIFICATION, SHOW_NOTIFICATION} from "./actionTypes";
 import {TNotify} from "src/store/notify/types";
+import * as Actions from './actions';
 
+type TActions = typeof Actions;
+type TTNotifyActions = ActionType<TActions>;
 const initialState: TNotify = {type: '', message: ''};
-type TAction = {
-    type: string;
-    payload?: any
-};
 
-const notificationReducer = (state = initialState, {type, payload}: TAction) => {
-    switch (type) {
+const notificationReducer: Reducer<TNotify, TTNotifyActions> = (state = initialState, action) => {
+    switch (action.type) {
     case SHOW_NOTIFICATION:
-        return {...payload, type: payload.type || 'success'};
+        return {...action.payload, type: action.payload.type || 'success'};
     case CLEAR_NOTIFICATION:
         return {type: '', message: ''};
     default:

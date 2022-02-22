@@ -1,15 +1,20 @@
-import React,  { useState, useEffect } from 'react';
+import React, {useEffect, useRef} from 'react';
 import {StDiv, StButton, StInput} from "./styled";
+import {TTodo} from "src/store/todos/types";
 
-const TaskInput = ({addTodos}) => {
-    const addTask = (task) => {
+type TProps = {
+    addTodos: (task: TTodo) => void
+};
+
+const TaskInput = ({addTodos}: TProps) => {
+    const addTask = (task: string) => {
         const newTask = {value: task, id: Date.now(), checked: false};
         addTodos(newTask);
     };
-    const inputRef = React.createRef();
-    const[input, setInput] = React.useState('');
 
-    useEffect(()=> inputRef.current.focus());
+    const inputRef = useRef(null);
+    const[input, setInput] = React.useState('');
+    useEffect(() => inputRef.current.focus(), []);
 
     const addTaskToList = () => {
         if (input.trim()) {
@@ -18,8 +23,8 @@ const TaskInput = ({addTodos}) => {
         }
     };
 
-    const handleEnter = (event) => {if (event.key === 'Enter') addTaskToList();};
-    const inputChange = (event) => setInput(event.target.value );
+    const handleEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {if (event.key === 'Enter') addTaskToList();};
+    const inputChange = (event: React.ChangeEvent<HTMLInputElement>) => setInput(event.target.value );
 
     return (
         <StDiv>

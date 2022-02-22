@@ -1,8 +1,13 @@
 import React from 'react';
 import {StDiv} from './styled';
 import Item from '../Item';
+import {TTodo} from "src/store/todos/types";
 
-const List = ({todos}) => {
+type TProps = {
+    todos: [TTodo]
+};
+
+const List = ({todos}: TProps) => {
     return (
         <StDiv>
             {todos.map((el) => <Item

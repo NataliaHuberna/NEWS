@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import {COLORS} from "./constants/colors";
 
-export const StDiv = styled.div`
+type TDark = {
+    dark: boolean
+};
+
+export const StDiv = styled.div<TDark>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +35,7 @@ export const StH1 = styled.h1`
   font-weight: 800;
 `;
 
-export const StButton = styled.div`
+export const StButton = styled.div<TDark>`
   position: absolute;
   width: 200px;
   right: 30px;

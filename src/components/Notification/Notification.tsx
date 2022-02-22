@@ -1,12 +1,17 @@
 import React from 'react';
 import {StNotification} from "./styled";
+import {TNotify} from "src/store/notify/types";
 
-const Notification = ({clearNotification, notify}) => {
+type TProps = {
+    clearNotification: () => void,
+    notify: TNotify
+};
+
+const Notification = ({clearNotification, notify}: TProps) => {
     const {type, message} = notify;
-    console.log(notify)
     React.useEffect(() => {
-        if (type)  {
-            setTimeout(()=> {
+        if (type) {
+            setTimeout(() => {
                 clearNotification();
             }, 2000);}
     }, [type]);

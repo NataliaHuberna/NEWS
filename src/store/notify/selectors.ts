@@ -1,1 +1,3 @@
-export const selectNotify = (state) => state.notify;
+import { ApplicationState } from "../types";
+
+export const selectNotify = (state: ApplicationState) => state.notify;

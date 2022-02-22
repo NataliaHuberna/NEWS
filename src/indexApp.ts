@@ -3,8 +3,9 @@ import App from "./App";
 import {changeTheme} from "./store/theme/actions";
 import {selectTheme} from "./store/theme/selectors";
 import {Dispatch} from "redux";
+import {ApplicationState} from "src/store/types";
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: ApplicationState) => ({
     dark: selectTheme(state)
 });
 

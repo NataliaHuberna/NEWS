@@ -1,13 +1,19 @@
+import {ActionType} from "typesafe-actions";
+import { Reducer } from 'redux';
 import {CHANGE_THEME} from "./actionTypes";
+import {TTheme} from "src/store/theme/types";
+import * as Actions from './actions';
 
-const initialState = {dark: false};
+type TActions = typeof Actions;
+type TThemeActions = ActionType<TActions>;
+const initialState: TTheme = {dark: false};
 
-const themeReducer = (state = initialState, { type }) => {
-    switch (type) {
-        case CHANGE_THEME:
-            return {dark: !state.dark};
-        default:
-            return state;
+const themeReducer: Reducer<TTheme, TThemeActions> = (state = initialState, action) => {
+    switch (action.type) {
+    case CHANGE_THEME:
+        return {dark: !state.dark};
+    default:
+        return state;
     }
 };
 

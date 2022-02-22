@@ -4,7 +4,12 @@ import TaskInput from './components/TaskInput';
 import List from './components/List';
 import Notification from "./components/Notification";
 
-const App = ({dark, changeTheme}) => {
+type TProps = {
+    dark: boolean,
+    changeTheme: () => void
+};
+
+const App = ({dark, changeTheme}: TProps) => {
     return <StDiv dark={dark}>
         <StDivHeader><StH1>ToDoList</StH1></StDivHeader>
         <TaskInput />

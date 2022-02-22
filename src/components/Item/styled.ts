@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {COLORS} from "../../constants/colors";
+import {COLORS} from "src/constants/colors";
 
 export const StDescription = styled.div`
   width: 80%;
@@ -11,7 +11,8 @@ export const StDescription = styled.div`
 
 type TStItem = {
   checked: boolean
-}
+};
+
 export const StItem = styled.div<TStItem>`
   display: flex;
   align-items: center;

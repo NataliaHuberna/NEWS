@@ -1,1 +1,3 @@
-export const selectTodos = (state) => state.todos;
+import { ApplicationState } from "../types";
+
+export const selectTodos = (state: ApplicationState) => state.todos;
