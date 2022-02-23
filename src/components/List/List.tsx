@@ -4,7 +4,7 @@ import Item from '../Item';
 import {TTodo} from "src/store/todos/types";
 
 type TProps = {
-    todos: [TTodo]
+    todos: TTodo[]
 };
 
 const List = ({todos}: TProps) => {
