@@ -1,12 +1,12 @@
 import {ActionType} from "typesafe-actions";
 import { Reducer } from 'redux';
-import {ADD_TODO, DELETE_TODO, CHECK_TODOS} from "./actionTypes";
+import {ADD_TODO, DELETE_TODO, CHECK_TODOS, ADD_TODO_LIST} from "./actionTypes";
 import {TTodo} from './types';
 import * as Actions from './actions';
 
 type TActions = typeof Actions;
 type TTodosActions = ActionType<TActions>;
-const initialState: Array<TTodo> = [{value: 'task', id: 1, checked: false}];
+const initialState: TTodo[] = [];
 
 const todosReducer: Reducer<TTodo[], TTodosActions> = (state = initialState, action) => {
     switch(action.type){
@@ -15,7 +15,11 @@ const todosReducer: Reducer<TTodo[], TTodosActions> = (state = initialState, act
     case DELETE_TODO:
         return state.filter(element => element.id !== action.payload);
     case CHECK_TODOS:
-        return state.map(element => element.id === action.payload ? {...element, checked: !element.checked} : element);
+        return state.map(
+            element => element.id === action.payload ? {...element, completed: !element.completed} : element
+        );
+    case ADD_TODO_LIST:
+        return [...state, ...action.payload];
     default:
         return state;
     }

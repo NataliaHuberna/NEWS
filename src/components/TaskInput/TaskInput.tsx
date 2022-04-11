@@ -6,9 +6,9 @@ type TProps = {
     addTodos: (task: TTodo) => void
 };
 
-const TaskInput = ({addTodos}: TProps) => {
+const TaskInput: React.FC<TProps> = ({addTodos}) => {
     const addTask = (task: string) => {
-        const newTask = {value: task, id: Date.now(), checked: false};
+        const newTask = {title: task, id: Date.now(), completed: false};
         addTodos(newTask);
     };
 

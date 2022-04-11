@@ -10,7 +10,7 @@ export const StDescription = styled.div`
 `;
 
 type TStItem = {
-  checked: boolean
+    completed: boolean
 };
 
 export const StItem = styled.div<TStItem>`
@@ -22,7 +22,7 @@ export const StItem = styled.div<TStItem>`
   border-radius: 5px;
   margin-bottom: 15px;
   padding: 10px;
-  ${({checked}) => checked ? `
+  ${({completed}) => completed ? `
     background-color: ${COLORS.darkgray};
     ${StDescription}{
       text-decoration: line-through;

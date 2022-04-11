@@ -11,10 +11,10 @@ const List = ({todos}: TProps) => {
     return (
         <StDiv>
             {todos.map((el) => <Item
-                taskText={el.value}
+                title={el.title}
                 key = {el.id}
                 id={el.id}
-                checked = {el.checked}/>
+                completed = {el.completed}/>
             )}
         </StDiv>
     );

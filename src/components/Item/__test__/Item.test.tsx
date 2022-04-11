@@ -6,37 +6,33 @@ describe('Item', () => {
     let props;
     beforeEach(() => {
         props = {
-            taskText:'some task',
+            title:'some task',
             deleteTodo: jest.fn(),
-            checked: false,
+            completed: false,
             checkTodo: jest.fn(),
             id: 1234,
-            showNotification: jest.fn()
-        }
-    })
+        };
+    });
     it('should render correctly', () => {
-       const component = shallow(<Item {...props}/>);
+        const component = shallow(<Item {...props}/>);
         expect(component).toMatchSnapshot();
     });
     it('should render prop taskText', () => {
         const component = mount(<Item {...props}/>);
-        console.log(component.debug());
-        expect(component.find('div').at(1).text()).toEqual(props.taskText);
+        expect(component.find('div').at(1).text()).toEqual(props.title);
     });
     it('should render prop checked', () => {
         const component = mount(<Item {...props}/>);
-        expect(component.find('input').getElement().props.checked).toEqual(props.checked);
+        expect(component.find('input').getElement().props.checked).toEqual(props.completed);
     });
     it('should call checkChange', () => {
         const component = mount(<Item {...props}/>);
-        console.log(component.debug());
-        component.find('input').getElement().props.onChange()
+        component.find('input').getElement().props.onChange();
         expect(props.checkTodo).toHaveBeenCalledWith(props.id);
     });
     it('should call deleteTask', () => {
         const component = mount(<Item {...props}/>);
-        console.log(component.debug());
-        component.find('button').getElement().props.onClick()
+        component.find('button').getElement().props.onClick();
         expect(props.deleteTodo).toHaveBeenCalledWith(props.id);
     });
-})
+});

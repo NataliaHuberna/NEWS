@@ -1,34 +1,30 @@
 import React from 'react';
 import {StItem, StDescription, Button, StInputCheckbox} from "./styled";
-import {TNotify} from "src/store/notify/types";
 
 type TProps = {
-    taskText: string,
-    checked: boolean,
+    title: string,
+    completed: boolean,
     id: number,
     checkTodo: (id: number) => void,
     deleteTodo: (id: number) => void,
-    showNotification: (notify: TNotify) => void
 };
 
-const Item: React.FC<TProps> = ({taskText, checked, id, checkTodo, deleteTodo, showNotification}) => {
+const Item: React.FC<TProps> = ({title, completed, id, checkTodo, deleteTodo}) => {
     const changeChecked = () => {
         checkTodo(id);
-        showNotification({message: 'Todo was checked'});
     };
 
     const handleDeleteTodo = () => {
         deleteTodo(id);
-        showNotification({message: 'Todo was deleted'});
     };
 
     return (
-        <StItem checked={checked}>
-            <StInputCheckbox onChange={changeChecked} type="checkbox" checked={checked}/>
-            <StDescription>{taskText}</StDescription>
+        <StItem completed={completed}>
+            <StInputCheckbox onChange={changeChecked} type="checkbox" checked={completed}/>
+            <StDescription>{title}</StDescription>
             <Button onClick={handleDeleteTodo} className="btn-delete">Delete</Button>
         </StItem>
     );
 };
-    
+
 export default Item;

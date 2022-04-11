@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {StButton, StDiv, StDivHeader, StH1} from "./styled";
 import TaskInput from './components/TaskInput';
 import List from './components/List';
@@ -6,10 +6,12 @@ import Notification from "./components/Notification";
 
 type TProps = {
     dark: boolean,
-    changeTheme: () => void
+    changeTheme: () => void,
+    loadTodos: () => void
 };
 
-const App = ({dark, changeTheme}: TProps) => {
+const App = ({dark, changeTheme, loadTodos}: TProps) => {
+    useEffect(() => {loadTodos();}, []);
     return <StDiv dark={dark}>
         <StDivHeader><StH1>ToDoList</StH1></StDivHeader>
         <TaskInput />

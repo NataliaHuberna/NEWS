@@ -7,12 +7,10 @@ import App from './indexApp';
 import {store} from './store';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <GlobalStyle />
-            <App />
-        </Provider>
-    </React.StrictMode>,
+    <Provider store={store}>
+        <GlobalStyle />
+        <App />
+    </Provider>,
     document.getElementById('root')
 );
 
